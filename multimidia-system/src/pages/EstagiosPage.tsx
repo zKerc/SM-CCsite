@@ -37,7 +37,19 @@ const EstagiosPage: React.FC = () => {
             <div className="bg-white rounded-lg shadow p-4 space-y-3 border-l-4 border-yellow-600 text-gray-800">
               <p><b>Art. 69.</b> É possível solicitar a convalidação do estágio obrigatório caso o estudante tenha exercido, nos últimos três anos, atividade profissional compatível com sua área de formação, por um período mínimo de seis meses e com carga horária igual ou superior à exigida pelo curso.</p>
               <ul className="list-disc ml-6 text-gray-800">
-                <li><b>§1º.</b> A solicitação deve ser feita por meio de requerimento específico, acompanhado de documentação comprobatória, e entregue ao Coordenador de Estágio do curso.</li>
+                <li>
+                  <b>§1º.</b> A solicitação deve ser feita por meio de requerimento específico, acompanhado de documentação comprobatória, e entregue ao Coordenador de Estágio do curso.
+                  {' '}Acesse o formulário em{' '}
+                  <a
+                    href="https://proreitorias.uepb.edu.br/prograd/requerimento/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-700 font-semibold underline hover:text-blue-900"
+                    style={{ color: '#1d4ed8' }}
+                  >
+                    https://proreitorias.uepb.edu.br/prograd/requerimento/
+                  </a>.
+                </li>
                 <li><b>§2º.</b> É necessário apresentar um relatório de atividades, que será avaliado pelo orientador, com emissão de parecer.</li>
                 <li><b>§3º.</b> Toda a documentação, juntamente com o parecer, será analisada pelo Coordenador de Estágio do curso e encaminhada para homologação pela Coordenação Geral de Estágios (PROGRAD).</li>
               </ul>
@@ -91,7 +103,8 @@ const EstagiosPage: React.FC = () => {
                     href="https://proreitorias.uepb.edu.br/prograd/requerimento/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-700 underline hover:text-blue-900"
+                    className="text-blue-700 font-semibold underline hover:text-blue-900"
+                    style={{ color: '#1d4ed8' }}
                   >
                     https://proreitorias.uepb.edu.br/prograd/requerimento/
                   </a>
