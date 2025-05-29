@@ -4,6 +4,8 @@ import HomePage from './pages/HomePage';
 import FlowchartPage from './pages/FlowchartPage';
 import CalendarPage from './pages/CalendarPage';
 import PlanoCursoPage from './pages/PlanoCursoPage';
+import FormularioPage from './pages/FormularioPage';
+import EstagiosPage from './pages/EstagiosPage';
 
 function App() {
   return (
@@ -13,9 +15,9 @@ function App() {
       <Route path="/fluxograma" element={<FlowchartPage />} />
       <Route path="/plano-curso" element={<PlanoCursoPage />} />
       <Route path="/professores" element={<div className="min-h-screen flex flex-col bg-gray-50">Página Professores</div>} />
-      <Route path="/estagios" element={<div className="min-h-screen flex flex-col bg-gray-50">Página Estágios</div>} />
+      <Route path="/estagios" element={<EstagiosPage />} />
       <Route path="/tcc" element={<div className="min-h-screen flex flex-col bg-gray-50">Página TCC</div>} />
-      <Route path="/formularios" element={<div className="min-h-screen flex flex-col bg-gray-50">Página Formulários</div>} />
+      <Route path="/formularios" element={<FormularioPage />} />
     </Routes>
   );
 }

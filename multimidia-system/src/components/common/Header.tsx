@@ -79,18 +79,18 @@ const Header: React.FC = () => {
               aria-expanded={isDropdownOpen}
               type="button"
             >
-              Mais
-              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+              {/* Ícone de menu (hamburger) para o dropdown */}
+              <svg className="w-6 h-6" fill="none" stroke="white" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
             {isDropdownOpen && (
-              <div className="absolute right-0 mt-2 w-48 bg-blue-800 rounded shadow-lg border border-blue-900 z-50">
+              <div className="absolute right-0 mt-2 w-56 bg-blue-900 rounded shadow-lg border border-blue-900 z-50 py-2">
                 {navItems.slice(4).map((item) => (
                   <Link
                     key={item.path}
                     to={item.path}
-                    className={`block px-4 py-2 text-white hover:bg-blue-700 transition-colors text-sm ${isActive(item.path) ? 'font-semibold bg-blue-700' : ''}`}
+                    className={`block px-5 py-2 text-white hover:bg-blue-700 transition-colors text-sm ${isActive(item.path) ? 'font-semibold bg-blue-700' : ''}`}
                     onClick={() => setIsDropdownOpen(false)}
                   >
                     {item.title}

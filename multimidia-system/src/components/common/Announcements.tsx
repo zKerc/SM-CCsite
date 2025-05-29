@@ -46,7 +46,7 @@ const Announcements: React.FC = () => {
                 <p className="text-gray-600 text-sm sm:text-base">{announcement.content}</p>
               </div>
               <div className="px-4 sm:px-5 py-2 sm:py-3 bg-gray-50 border-t border-gray-100 flex justify-end">
-                <button className="text-blue-600 hover:text-blue-800 font-medium text-xs sm:text-sm">
+                <button className="text-white hover:text-blue-800 font-medium text-xs sm:text-sm">
                   Leia mais &rarr;
                 </button>
               </div>
@@ -55,7 +55,7 @@ const Announcements: React.FC = () => {
         </div>
         
         <div className="text-center mt-8 sm:mt-10">
-          <button className="bg-white border border-blue-600 text-blue-600 font-medium py-2 px-6 sm:py-2.5 sm:px-8 rounded-lg transition-colors inline-flex items-center text-sm sm:text-base">
+          <button className="bg-white border border-blue-600 text-white font-medium py-2 px-6 sm:py-2.5 sm:px-8 rounded-lg transition-colors inline-flex items-center text-sm sm:text-base">
             Ver mais
           </button>
         </div>
