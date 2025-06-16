@@ -18,6 +18,7 @@ const HeroBanner: React.FC = () => {
         <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
           <button
             className="bg-white text-blue-800 px-5 py-2.5 sm:px-6 sm:py-3 rounded-lg font-medium hover:bg-blue-100 transition-colors shadow-lg w-full max-w-xs sm:w-auto"
+            style={{ backgroundColor: '#fff', color: '#1e40af' }}
             onClick={() => navigate('/calendario')}
           >
             Calendário Acadêmico

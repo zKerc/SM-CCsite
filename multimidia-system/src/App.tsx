@@ -10,6 +10,7 @@ import TccPage from './pages/TccPage';
 import Tcc1Page from './pages/Tcc1Page';
 import Tcc2Page from './pages/Tcc2Page';
 import ProfessoresPage from './pages/ProfessoresPage';
+import AdminPage from './pages/AdminPage';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Route path="/tcc1" element={<Tcc1Page />} />
       <Route path="/tcc2" element={<Tcc2Page />} />
       <Route path="/formularios" element={<FormularioPage />} />
+      <Route path="/admin" element={<AdminPage />} />
     </Routes>
   );
 }

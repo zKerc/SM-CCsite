@@ -1,0 +1,18 @@
+{
+  "calendario": [
+    { "etapa": "Requerimento de TCC", "data": "14.03", "descricao": "Envio do Requerimento do TCC com o aceite do orientador" },
+    { "etapa": "Defesa do TCC", "data": "06.06", "descricao": "É necessário o orientador realizar o agendamento através do formulário" },
+    { "etapa": "Correções do TCC", "data": "18.06", "descricao": "Prazo final para o orientador colocar a nota do aluno e submeter o doc do TCC" },
+    { "etapa": "Depósito do TCC", "data": "27.06", "descricao": "Depósito do TCC na biblioteca e SUAP" }
+  ],
+  "formularios": [
+    {
+      "nome": "Formulário de Requerimento do TCC 1 e TCC 2",
+      "url": "https://docs.google.com/forms/d/e/1FAIpQLScGquDtKJGgv-RH-IuDbAqDiGLMP2QeB1s7tBqPgjTqzQcy4A/viewform"
+    },
+    {
+      "nome": "Agendamento - Defesa do TCC 2",
+      "url": "https://docs.google.com/forms/d/e/1FAIpQLSdIiz4cFkoBC0Rnr-98UJnHkHNwFOsnbqO4tldLTk_yVG85dA/viewform"
+    }
+  ]
+}

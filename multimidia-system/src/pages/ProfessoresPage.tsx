@@ -1,30 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
 
-const professores = [
-  { nome: 'Ana Isabella Muniz Leite', email: 'isabella@servidor.uepb.edu.br' },
-  { nome: 'Antonio Carlos de Albuquerque', email: 'antoniocarlosdc@uepb.edu.br' },
-  { nome: 'Cheyenne Ribeiro Guedes Isidro', email: 'charibeiro@servidor.uepb.edu.br' },
-  { nome: 'Daniel Scherer', email: 'scherer@servidor.uepb.edu.br' },
-  { nome: 'Dunfrey Pires Aragão', email: 'dunfrey.aragao@servidor.uepb.edu.br' },
-  { nome: 'Edson Holanda Cavalcante Junior', email: 'edsonholanda@uepb.edu.br' },
-  { nome: 'Eduardo Jorge Valadares Oliveira', email: 'edjuyo@servidor.uepb.edu.br' },
-  { nome: 'Fábio Luiz Leite Junior', email: 'fabioleite@servidor.uepb.edu.br' },
-  { nome: 'Frederico Moreira Bubitz', email: 'fredbubitz@servidor.uepb.edu.br' },
-  { nome: 'Janderson Jason Barbosa Aguiar', email: 'janderson@servidor.uepb.edu.br' },
-  { nome: 'Katia Elizabete Galdino', email: 'katiagaldino@gmail.com' },
-  { nome: 'Kézia de Vasconcelos Oliveira Dantas', email: 'kezia.vasconcelos@servidor.uepb.edu.br' },
-  { nome: 'Luciana de Queiroz Leal Gomes', email: 'lucianaleal@servidor.uepb.edu.br' },
-  { nome: 'Misael Elias de Morais', email: 'moraiscog@gmail.com' },
-  { nome: 'Paulo Eduardo e Silva Barbosa', email: 'pesbarbosa@gmail.com' },
-  { nome: 'Robson Pequeno de Sousa', email: 'sousarob@servidor.uepb.edu.br' },
-  { nome: 'Sabrina de Figueiredo Souto', email: 'sabrinadfs@servidor.uepb.edu.br' },
-  { nome: 'Vladimir Costa de Alencar', email: 'valencar@servidor.uepb.edu.br' },
-  { nome: 'Wellington Candela de Araujo', email: 'wcandela@servidor.uepb.edu.br' },
-];
-
 const ProfessoresPage: React.FC = () => {
+  const [professores, setProfessores] = useState<{efetivos: any[], substitutos: any[]}>({efetivos: [], substitutos: []});
+
+  useEffect(() => {
+    fetch('/src/data/professores.json')
+      .then(res => res.json())
+      .then(setProfessores);
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Header />
@@ -48,7 +34,7 @@ const ProfessoresPage: React.FC = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {professores.map((prof, idx) => (
+                  {professores.efetivos.map((prof, idx) => (
                     <tr key={prof.email} className={idx % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                       <td className="p-3">{prof.nome}</td>
                       <td className="p-3">

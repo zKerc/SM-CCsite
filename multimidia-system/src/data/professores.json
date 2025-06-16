@@ -1,0 +1,11 @@
+{
+  "efetivos": [
+    { "nome": "Ana Isabella Muniz Leite", "email": "isabella@servidor.uepb.edu.br" },
+    { "nome": "Antonio Carlos de Albuquerque", "email": "antoniocarlosdc@uepb.edu.br" },
+    { "nome": "Cheyenne Ribeiro Guedes Isidro", "email": "charibeiro@servidor.uepb.edu.br" }
+  ],
+  "substitutos": [
+    { "nome": "Fulano de Tal", "email": "fulano.substituto@servidor.uepb.edu.br" },
+    { "nome": "Ciclana Silva", "email": "ciclana.silva@uepb.edu.br" }
+  ]
+}
