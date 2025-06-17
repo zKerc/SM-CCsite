@@ -2,10 +2,25 @@
   "efetivos": [
     { "nome": "Ana Isabella Muniz Leite", "email": "isabella@servidor.uepb.edu.br" },
     { "nome": "Antonio Carlos de Albuquerque", "email": "antoniocarlosdc@uepb.edu.br" },
-    { "nome": "Cheyenne Ribeiro Guedes Isidro", "email": "charibeiro@servidor.uepb.edu.br" }
+    { "nome": "Cheyenne Ribeiro Guedes Isidro", "email": "charibeiro@servidor.uepb.edu.br" },
+    { "nome": "Daniel Scherer", "email": "scherer@servidor.uepb.edu.br" },
+    { "nome": "Dunfrey Pires Aragão", "email": "dunfrey.aragao@servidor.uepb.edu.br" },
+    { "nome": "Edson Holanda Cavalcante Junior", "email": "edsonholanda@uepb.edu.br" },
+    { "nome": "Eduardo Jorge Valadares Oliveira", "email": "edujvo@servidor.uepb.edu.br" },
+    { "nome": "Fábio Luiz Leite Júnior", "email": "fabioleite@servidor.uepb.edu.br" },
+    { "nome": "Frederico Moreira Bublitz", "email": "fredbublitz@servidor.uepb.edu.br" },
+    { "nome": "Janderson Jason Barbosa Aguiar", "email": "janderson@servidor.uepb.edu.br" },
+    { "nome": "Katia Elizabete Galdino", "email": "katiagaldino@servidor.uepb.edu.br" },
+    { "nome": "Kézia de Vasconcelos Oliveira Dantas", "email": "kezia.vasconcelos@servidor.uepb.edu.br" },
+    { "nome": "Luciana de Queiroz Leal Gomes", "email": "lucianaleal@servidor.uepb.edu.br" },
+    { "nome": "Misael Elias de Morais", "email": "moraiscg@gmail.com" },
+    { "nome": "Paulo Eduardo e Silva Barbosa", "email": "pesbarbosa@gmail.com" },
+    { "nome": "Robson Pequeno de Sousa", "email": "sousarob@servidor.uepb.edu.br" },
+    { "nome": "Sabrina de Figueiredo Souto", "email": "sabrinadfs@servidor.uepb.edu.br" },
+    { "nome": "Vladimir Costa de Alencar", "email": "valencar@servidor.uepb.edu.br" },
+    { "nome": "Wellington Candeia de Araujo", "email": "wcandeia@servidor.uepb.edu.br" }
   ],
   "substitutos": [
-    { "nome": "Fulano de Tal", "email": "fulano.substituto@servidor.uepb.edu.br" },
-    { "nome": "Ciclana Silva", "email": "ciclana.silva@uepb.edu.br" }
+    { "nome": "Daniel Marques Targino Guimarães", "email": "danielmarques@servidor.uepb.edu.br"}
   ]
 }

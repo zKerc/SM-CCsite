@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
               <div>
                 <h3 className="text-base sm:text-lg font-bold mb-3 sm:mb-4">Links Rápidos</h3>
                 <ul className="space-y-1.5 sm:space-y-2 text-sm">
-                  {['Calendário Acadêmico', 'Plano de Curso', 'Fluxograma', 'Professores', 'Estágios', 'TCC', 'Formulários'].map((item) => (
+                  {['Calendário Acadêmico', 'Plano de Curso', 'Matriz Curricular', 'Professores', 'Estágios', 'TCC', 'Formulários'].map((item) => (
                     <li key={item}>
                       <a href="#" className="text-gray-400 hover:text-white transition-colors">{item}</a>
                     </li>
@@ -80,7 +80,6 @@ const Footer: React.FC = () => {
             </div>
           </div>
         </div>
-        
         <div className="border-t border-gray-700 mt-6 sm:mt-8 pt-4 sm:pt-6 text-center text-gray-400 text-xs sm:text-sm">
           <p>&copy; {currentYear} Curso de Computação - UEPB Campus I. Todos os direitos reservados.</p>
           <p className="mt-1 sm:mt-2">Desenvolvido com carinho pela turma de Sistemas de Multimídia</p>

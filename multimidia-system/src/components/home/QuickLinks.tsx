@@ -14,7 +14,7 @@ const QuickLinks: React.FC = () => {
       path: '/plano-curso'
     },
     { 
-      title: 'Fluxograma', 
+      title: 'Matriz Curricular', 
       description: 'Visualize o caminho das disciplinas ao longo dos períodos',
       icon: (
         <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -76,7 +76,7 @@ const QuickLinks: React.FC = () => {
           <div className="w-16 sm:w-24 h-1 bg-blue-600 mx-auto mt-3 sm:mt-4"></div>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8 max-w-6xl mx-auto">
           {links.map((link, index) => (
             <Link 
               key={index} 

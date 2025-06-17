@@ -3,7 +3,7 @@ import SocialLink from './SocialLink';
 
 const ContactSection: React.FC = () => {
   return (
-    <section className="py-10 sm:py-16 bg-white">
+    <section className="py-8 sm:py-10 md:py-16 bg-white">
       <div className="container mx-auto px-2 sm:px-4">
         <div className="max-w-5xl mx-auto bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl shadow-lg overflow-hidden border border-blue-100">
           <div className="flex flex-col md:flex-row">

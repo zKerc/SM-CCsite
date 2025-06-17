@@ -11,7 +11,7 @@ const Header: React.FC = () => {
     { title: 'Página Inicial', path: '/' },
     { title: 'Calendário', path: '/calendario' },
     { title: 'Plano de Curso', path: '/plano-curso' },
-    { title: 'Fluxograma', path: '/fluxograma' },
+    { title: 'Matriz Curricular', path: '/fluxograma' },
     { title: 'Professores', path: '/professores' },
     { title: 'Estágios', path: '/estagios' },
     { title: 'TCC', path: '/tcc' },
@@ -55,8 +55,25 @@ const Header: React.FC = () => {
             />
           </div>
           <div className="truncate flex flex-col">
-            <h1 className="text-base sm:text-xl font-bold truncate">Computação - UEPB</h1>
-            <p className="text-xs">Campus I</p>
+            <h1
+              className="
+                text-xs
+                xs:text-sm
+                sm:text-base
+                md:text-xl
+                font-bold
+                truncate
+                leading-tight
+                "
+              style={{
+                lineHeight: '1.1',
+                // Garante que o texto diminua em telas pequenas
+                fontSize: 'clamp(0.75rem, 4vw, 1.25rem)'
+              }}
+            >
+              Computação - UEPB
+            </h1>
+            <p className="text-[10px] xs:text-xs sm:text-xs">Campus I</p>
           </div>
         </div>
 

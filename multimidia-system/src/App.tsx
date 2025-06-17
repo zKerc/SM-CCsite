@@ -17,6 +17,7 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/calendario" element={<CalendarPage />} />
+      {/* Matriz Curricular */}
       <Route path="/fluxograma" element={<FlowchartPage />} />
       <Route path="/plano-curso" element={<PlanoCursoPage />} />
       <Route path="/professores" element={<ProfessoresPage />} />

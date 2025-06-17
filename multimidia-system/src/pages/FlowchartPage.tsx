@@ -108,11 +108,24 @@ const FlowchartPage: React.FC = () => {
     { label: 'TCC', color: COLORS.tcc },
   ];
 
+  // Disciplinas liberadas ao concluir a selecionada
+  function getUnlockedDisciplines(selectedName: string) {
+    const unlocked: string[] = [];
+    SEMESTERS.forEach((sem) => {
+      sem.forEach((disc) => {
+        if (disc.prereq && disc.prereq.some((p) => p.toLowerCase() === selectedName.toLowerCase())) {
+          unlocked.push(disc.name);
+        }
+      });
+    });
+    return unlocked;
+  }
+
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Header />
       <main className="flex-grow">
-        <div className="container mx-auto px-2 sm:px-4 py-8">
+        <div className="container mx-auto px-1 sm:px-2 md:px-4 py-8 max-w-full">
           <div className="text-center mb-8">
             <h1 className="text-3xl md:text-4xl font-bold text-gray-800">Matriz Curricular do Curso</h1>
             <p className="text-gray-600 mt-2">Estrutura curricular do curso de Bacharelado em Computação</p>
@@ -145,9 +158,9 @@ const FlowchartPage: React.FC = () => {
           </div>
 
           {/* Matriz Curricular em formato de tabela, responsivo e centralizado */}
-          <div className="w-full flex justify-center">
+          <div className="w-full flex justify-center overflow-x-auto">
             <div className="w-full max-w-screen-2xl overflow-x-auto">
-              <table className="w-full border-collapse rounded-xl overflow-hidden shadow bg-white text-base">
+              <table className="w-full border-collapse rounded-xl overflow-hidden shadow bg-white text-xs sm:text-base">
                 <thead>
                   <tr>
                     {SEMESTERS.map((_, i) => (
@@ -169,10 +182,17 @@ const FlowchartPage: React.FC = () => {
                         if (!disc) {
                           return <td key={colIdx} className="border border-gray-200 p-2 md:p-3 bg-gray-50"></td>;
                         }
+                        const isSelected = selected?.name === disc.name;
                         return (
                           <td
                             key={colIdx}
-                            className={`border-2 p-2 md:p-3 cursor-pointer transition-all text-center select-none ${getColor(disc.area)} ${selected?.name === disc.name ? 'ring-2 ring-blue-500' : ''}`}
+                            className={
+                              `border-2 p-2 md:p-3 cursor-pointer transition-all text-center select-none ` +
+                              (isSelected
+                                ? 'bg-white border-blue-700 ring-2 ring-blue-500'
+                                : getColor(disc.area)
+                              )
+                            }
                             style={{
                               minWidth: '120px',
                               maxWidth: '220px',
@@ -180,8 +200,19 @@ const FlowchartPage: React.FC = () => {
                             }}
                             onClick={() => setSelected(disc)}
                           >
-                            <div className="font-bold text-white drop-shadow-sm text-xs md:text-base" style={{ textShadow: '0 1px 2px #0003' }}>{disc.name}</div>
-                            <div className="text-xs text-white/90">{disc.hours}h</div>
+                            <div
+                              className={
+                                isSelected
+                                  ? 'font-bold text-blue-700 drop-shadow-sm text-xs md:text-base'
+                                  : 'font-bold text-white drop-shadow-sm text-xs md:text-base'
+                              }
+                              style={isSelected ? { textShadow: 'none' } : { textShadow: '0 1px 2px #0003' }}
+                            >
+                              {disc.name}
+                            </div>
+                            <div className={isSelected ? 'text-xs text-blue-700/90' : 'text-xs text-white/90'}>
+                              {disc.hours}h
+                            </div>
                           </td>
                         );
                       })}
@@ -202,25 +233,35 @@ const FlowchartPage: React.FC = () => {
           </div>
 
           {/* Cards de pré-requisitos e como navegar, lado a lado em telas grandes */}
-          <div className="flex flex-col md:flex-row gap-8 mt-8 max-w-5xl mx-auto">
+          <div className="flex flex-col md:flex-row gap-8 mt-8 max-w-5xl mx-auto px-1">
             <div className="md:w-1/2 w-full">
-              <div className="bg-white rounded-xl shadow p-6 min-h-[140px]">
-                <h2 className="font-bold text-blue-800 mb-2 text-lg">Pré-requisitos</h2>
+              <div className="bg-white rounded-xl shadow p-6 min-h-[180px]">
                 {selected ? (
-                  <div>
-                    <div className="font-semibold text-gray-800 mb-1">{selected.name}</div>
+                  <>
+                    <div className="font-bold text-blue-800 text-lg mb-2 text-center">{selected.name}</div>
+                    <h2 className="font-bold text-blue-800 mb-1 text-base">Pré-requisitos</h2>
                     {selected.prereq && selected.prereq.length > 0 ? (
-                      <ul className="list-disc ml-5 text-gray-700">
+                      <ul className="list-disc ml-5 text-gray-700 mb-3">
                         {selected.prereq.map((p, idx) => (
                           <li key={idx}>{p}</li>
                         ))}
                       </ul>
                     ) : (
-                      <div className="text-gray-500">Sem pré-requisitos.</div>
+                      <div className="text-gray-500 mb-3">Sem pré-requisitos.</div>
                     )}
-                  </div>
+                    <h2 className="font-bold text-blue-800 mb-1 text-base">Disciplinas que dependem desta</h2>
+                    {getUnlockedDisciplines(selected.name).length > 0 ? (
+                      <ul className="list-disc ml-5 text-gray-700">
+                        {getUnlockedDisciplines(selected.name).map((d, idx) => (
+                          <li key={idx}>{d}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <div className="text-gray-500">Nenhuma disciplina depende diretamente desta.</div>
+                    )}
+                  </>
                 ) : (
-                  <div className="text-gray-500">Clique em uma disciplina para ver os pré-requisitos.</div>
+                  <div className="text-gray-500">Clique em uma disciplina para ver os pré-requisitos e dependências.</div>
                 )}
               </div>
             </div>
